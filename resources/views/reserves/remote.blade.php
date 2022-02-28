@@ -7,16 +7,6 @@
   <title>Reservation_system</title>
 </head>
 <body>
-  <header>
-    <nav class="my-navbar">
-      <a class="my-navbar-brand" href="#">予約システム</a>
-      <a href="/logout">ログアウト</a>
-    </nav>
-  </header>
-  <form>
-    <label>リモート予約フォーム</label>
-    <input type="radio" name="reserves" value="リモート予約" name="remote">リモート予約
-    <a href="#" class="btn btn-default btn-block">送信する</a>
-  </form>
+ここはremoteの予約フォーム
 </body>
 </html>

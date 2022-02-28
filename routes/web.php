@@ -11,54 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/reserves/{id}/reserves', 'ReservationController@index')->name('reserves.index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::post('/register', 'Auth\RegisterController@register');
-
-Route::get('/logout', 'Auth\LoginController@logout');
-
-Route::post('/index', 'ReservationController@reserve')->name('reserves.reserve');
-
-
-
-
-
-
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 /*
 | 1) User 認証不要
 */
-Route::get('/', function () { return redirect('/home'); });
-
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
 /*
 | 2) User ログイン後
 */
 Route::group(['middleware' => 'auth:user'], function() {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/reserve/index', 'ReservationController@index')->name('reserves.index');
+    Route::get('/reserve/reserveform', 'ReservationController@reserve')->name('reserves.reserve');
+    Route::get('/reserve/remoteform', 'ReservationController@remote')->name('reserves.remote');
 });
 
-/*
-| 3) Admin 認証不要
-*/
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('/',         function () { return redirect('/admin/home'); });
-    Route::get('login',     'Admin\LoginController@showLoginForm')->name('admin.login');
-    Route::post('login',    'Admin\LoginController@login');
-});
 
-/*
-| 4) Admin ログイン後
-*/
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
-    Route::post('logout',   'Admin\LoginController@logout')->name('admin.logout');
-    Route::get('home',      'Admin\HomeController@index')->name('admin.home');
-});
+
+
+
+
+
+
+
+
+
+
+

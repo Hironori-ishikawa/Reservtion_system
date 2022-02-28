@@ -41,8 +41,15 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-
-        return view("reserves.index");
+        if($request->isMethod('post')){
+            
+            $data=$request->only('email','password');
+            // ログインが成功したら、トップページへ
+            //↓ログイン条件は公開時には消すこと
+            if(Auth::attempt($data)){
+                return redirect("/reserve/index");
+            }
+        }
     }
 
 
