@@ -14,9 +14,9 @@
     </nav>
   </header>
   <form>
-    <label>予約方法を選択してください。</label>
-    <a href="{{ route('reserves.reserve')}}">来社予約</a>
+    <label>リモート予約フォーム</label>
     <input type="radio" name="reserves" value="リモート予約" name="remote">リモート予約
+    <a href="#" class="btn btn-default btn-block">送信する</a>
   </form>
 </body>
 </html>

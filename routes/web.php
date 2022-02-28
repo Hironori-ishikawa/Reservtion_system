@@ -24,6 +24,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::post('/index', 'ReservationController@reserve')->name('reserves.reserve');
+
+
+
+
+
+
+
+
 /*
 | 1) User 認証不要
 */
