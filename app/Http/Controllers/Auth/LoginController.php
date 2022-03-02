@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/reserve/index';
 
     /**
      * Create a new controller instance.
@@ -48,6 +48,8 @@ class LoginController extends Controller
             //↓ログイン条件は公開時には消すこと
             if(Auth::attempt($data)){
                 return redirect("/reserve/index");
+            }else{
+                return back();
             }
         }
     }

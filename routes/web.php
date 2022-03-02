@@ -19,6 +19,9 @@
 | 1) User 認証不要
 */
 Auth::routes();
+Route::get('/', function() {
+    return redirect('/login');
+});
 Route::get('/logout', 'Auth\LoginController@logout');
 /*
 | 2) User ログイン後
