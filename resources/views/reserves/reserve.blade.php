@@ -18,5 +18,6 @@
     <input type="radio" name="reserves" value="来社予約" name="reserves">来社予約
     <a href="#" class="btn btn-default btn-block">送信する</a>
   </form>
+ここはオフィス来社の予約フォーム
 </body>
 </html>

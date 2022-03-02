@@ -18,5 +18,6 @@
     <input type="radio" name="reserves" value="リモート予約" name="remote">リモート予約
     <a href="#" class="btn btn-default btn-block">送信する</a>
   </form>
+ここはremoteの予約フォーム
 </body>
 </html>
