@@ -13,10 +13,12 @@
       <a href="/logout">ログアウト</a>
     </nav>
   </header>
-  <form>
     <label>予約方法を選択してください。</label>
     <a href="{{ route('reserves.reserve')}}">来社予約</a>
     <a href="{{ route('reserves.remote')}}">リモート予約</a>
+<<<<<<< HEAD
   </form>
+=======
+>>>>>>> c21ae139322180e149e47690cea13cda1d9fd9e9
 </body>
 </html>
