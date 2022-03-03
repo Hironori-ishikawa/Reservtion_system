@@ -15,9 +15,6 @@
 //     return view('welcome');
 // });
 
-/*
-| 1) User 認証不要
-*/
 Auth::routes();
 Route::get('/', function() {
     return redirect('/login');
@@ -31,16 +28,4 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/reserve/reserveform', 'ReservationController@reserve')->name('reserves.reserve');
     Route::get('/reserve/remoteform', 'ReservationController@remote')->name('reserves.remote');
 });
-
-
-
-
-
-
-
-
-
-
-
-
 

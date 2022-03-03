@@ -19,5 +19,14 @@ class ReservationController extends Controller
     public function remote()
     {
         return view('reserves.remote');
+
+
     }
+
+    public function remote()
+    {
+        return view('reserves.remote');
+    }
+
+
 }
