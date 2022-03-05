@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservation_system</title>
-</head>
-<body>
-  <header>
-    <nav class="my-navbar">
-      <a class="my-navbar-brand" href="#">予約システム</a>
-      <a href="/logout">ログアウト</a>
-    </nav>
-  </header>
-    <label>予約方法を選択してください。</label>
-    <a href="{{ route('reserves.reserve')}}">来社予約</a>
-    <a href="{{ route('reserves.remote')}}">リモート予約</a>
-<<<<<<< HEAD
-  </form>
-=======
->>>>>>> c21ae139322180e149e47690cea13cda1d9fd9e9
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+<div class='main-form'>
+  <ul>
+      <h1><label>予約方法を選択してください。</label></h1>
+      <li><a href="{{ route('reserves.reserve')}}">来社予約</a></li>
+      <li><a href="{{ route('reserves.remote')}}">リモート予約</a></li>
+  </ul>
+</div>
+@endsection

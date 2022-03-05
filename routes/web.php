@@ -19,13 +19,16 @@ Auth::routes();
 Route::get('/', function() {
     return redirect('/login');
 });
+// ログアウト
 Route::get('/logout', 'Auth\LoginController@logout');
-/*
-| 2) User ログイン後
-*/
+
+// User ログイン後
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/reserve/index', 'ReservationController@index')->name('reserves.index');
     Route::get('/reserve/reserveform', 'ReservationController@reserve')->name('reserves.reserve');
     Route::get('/reserve/remoteform', 'ReservationController@remote')->name('reserves.remote');
 });
 
+// 来社予約
+Route::get('reserve', 'ReservationController@create'); // 入力フォーム
+Route::post('reserve', 'ReservationController@store'); // 送信先
