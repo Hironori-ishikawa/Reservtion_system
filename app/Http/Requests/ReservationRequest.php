@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ReservationRule;
+use App\Rules\ReservationRule;
 
 class ReservationRequest extends FormRequest
 {
@@ -19,12 +19,12 @@ class ReservationRequest extends FormRequest
     }
 
     public function all($keys = null)
-{
-    $results = parent::all($keys);
-    $results['start_at'] = $results['start_date'] .' '. $results['start_time'];
-    $results['end_at'] = $results['end_date'] .' '. $results['end_time'];
-    return $results;
-}
+    {
+        $results = parent::all($keys);
+        $results['start_at'] = $results['start_date'] .' '. $results['start_time'];
+        $results['end_at'] = $results['end_date'] .' '. $results['end_time'];
+        return $results;
+    }
 
     /**
      * Get the validation rules that apply to the request.

@@ -35,13 +35,18 @@ class ReservationController extends Controller
             'created_at' => now(),
             'update_at' => now()
         ]);
-        return back()->with('result', '予約が完了しました。');
+        return view('reserves.reserve');
 
     }
 
     public function store(ReservationRequest $request) {
 
         // ここで予約データ保存
-
+        \App\Reservation::create([
+            'id' => $request->_id,
+            'start_at' => $request->start_at,
+            'end_at' => $request->end_at
+        ]);
+        return back()->with('result', '予約が完了しました。');
     }
 }

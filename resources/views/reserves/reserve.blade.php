@@ -6,15 +6,18 @@
   <div class="form-group">
     <form action="/reserve" method="post">
       @csrf
-      <select name="reserve_id">
-        <option selected value="1">オフィス来社予約</option>
-      </select>
+      <div class="id">
+        <input type="text" name="id" value="1">
+      </div>
+      <div class="title">
+        <input type="text" name="title" value="オフィス来社予約">
+      </div>
       <div class="start">
-        <input type="date" name="start_date" value="2022-01-01">
+        <input type="date" name="start_date" value="2022-10-01">
         <input type="time" name="start_time" value="10:00">
       </div>
       <div class="end">
-        <input type="date" name="end_date" value="2022-01-01">
+        <input type="date" name="end_date" value="2022-10-01">
         <input type="time" name="end_time" value="12:00">
       </div>
 
