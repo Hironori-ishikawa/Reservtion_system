@@ -32,3 +32,6 @@ Route::group(['middleware' => 'auth:user'], function() {
 // 来社予約
 Route::get('reserve', 'ReservationController@create'); // 入力フォーム
 Route::post('reserve', 'ReservationController@store'); // 送信先
+
+
+Route::get('/reserve/{id}/delete','ReservationController@delete');

@@ -34,7 +34,6 @@ class ReservationRequest extends FormRequest
     public function rules()
     {
          return [
-            'id' => 'required',
             'title' => 'required',
             'start_date' => 'required|date',
             'start_time' => 'required|date_format:H:i',
@@ -42,7 +41,6 @@ class ReservationRequest extends FormRequest
             'end_time' => 'required|date_format:H:i',
             'start_at' => [
                 new ReservationRule(
-                    $this->id, //
                     $this->title,
                     $this->start_at, // 開始日時
                     $this->end_at // 終了日時

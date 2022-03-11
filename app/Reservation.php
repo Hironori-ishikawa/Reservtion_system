@@ -35,4 +35,6 @@ class Reservation extends Model
         });
 
     }
+
+
 }

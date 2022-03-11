@@ -16,26 +16,21 @@ class ReservationController extends Controller
 
     public function reserve()
     {
-        return view('reserves.reserve');
+        $id = Auth::id();
+        $list = DB::table('reservations')
+        ->where('user_id', Auth::user()->id)
+        ->select('reservations.*')
+        ->get();
+        return view('reserves.reserveform',['list'=>$list, 'id'=>$id]);
     }
 
     public function remote()
     {
-        return view('reserves.remote');
+        return view('reserves.remoteform');
     }
 
     public function create(Request $request)
     {
-        $reserve = $request->input('newReserve');
-        DB::table('reservations')->insert([
-            'id' => Auth::id(),
-            'title' => $title(),
-            'start_at' => $request->start_at,
-            'end_at' => $request->end_at,
-            'created_at' => now(),
-            'update_at' => now()
-        ]);
-        return view('reserves.reserve');
 
     }
 
@@ -43,10 +38,20 @@ class ReservationController extends Controller
 
         // ここで予約データ保存
         \App\Reservation::create([
-            'id' => $request->_id,
+            'user_id' => Auth::id(),
+            'title' => $request->title,
             'start_at' => $request->start_at,
             'end_at' => $request->end_at
         ]);
         return back()->with('result', '予約が完了しました。');
+    }
+
+    public function delete($id)
+    {
+        DB::table('reservations')
+        ->where('id', $id)
+        ->delete();
+
+        return back();
     }
 }
