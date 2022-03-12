@@ -33,5 +33,10 @@ Route::group(['middleware' => 'auth:user'], function() {
 Route::get('reserve', 'ReservationController@create'); // 入力フォーム
 Route::post('reserve', 'ReservationController@store'); // 送信先
 
+// リモート予約
+Route::get('remote', 'ReservationController@create'); // 入力フォーム
+Route::post('remote', 'ReservationController@store'); // 送信先
 
+// 削除
 Route::get('/reserve/{id}/delete','ReservationController@delete');
+Route::get('/remote/{id}/delete','ReservationController@delete');

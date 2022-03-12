@@ -7,7 +7,7 @@
     <form action="/reserve" method="post">
       @csrf
       <div class="title">
-        <input type="text" name="title" value="オフィス来社予約">
+        <input type="text" name="title" value="オフィス来社予約" readonly="readonly">
       </div>
       <div class="start">
         <input type="date" name="start_date" value="2022-10-01">

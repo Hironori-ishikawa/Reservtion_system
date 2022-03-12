@@ -26,7 +26,12 @@ class ReservationController extends Controller
 
     public function remote()
     {
-        return view('reserves.remoteform');
+        $id = Auth::id();
+        $list = DB::table('reservations')
+        ->where('user_id', Auth::user()->id)
+        ->select('reservations.*')
+        ->get();
+        return view('reserves.remoteform',['list'=>$list, 'id'=>$id]);
     }
 
     public function create(Request $request)
