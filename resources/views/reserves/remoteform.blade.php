@@ -47,7 +47,6 @@
 <div class="remote-list">
   <h2>予約履歴一覧</h2>
   <table>
-    @foreach ($list as $list)
     <div class="list-column">
       <tr>
         <td>予約種類</td>
@@ -56,6 +55,7 @@
         <td>予約時間</td>
       </tr>
     </div>
+    @foreach ($list as $list)
     <tr>
         <td>{{ $list->title }}</td>
         <td>{{ $list->start_at }}</td>

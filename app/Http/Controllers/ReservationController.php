@@ -39,18 +39,30 @@ class ReservationController extends Controller
 
     }
 
+    // 保存
+    // $check 同titleで同じ時間での検索をかける
+    // if($check<3) 3人以内であればcreate実行
     public function store(ReservationRequest $request) {
 
-        // ここで予約データ保存
-        \App\Reservation::create([
-            'user_id' => Auth::id(),
-            'title' => $request->title,
-            'start_at' => $request->start_at,
-            'end_at' => $request->end_at
-        ]);
-        return back()->with('result', '予約が完了しました。');
+        $check = \App\Reservation::where('title',$request->title)
+            ->whereBetween('start_at',[$request->start_at,$request->end_at])
+            ->whereBetween('end_at',[$request->start_at,$request->end_at])
+            ->count();
+
+        if($check<3){
+            \App\Reservation::create([
+                'user_id' => Auth::id(),
+                'title' => $request->title,
+                'start_at' => $request->start_at,
+                'end_at' => $request->end_at
+            ]);
+            return back()->with('result','予約が完了しました。');
+        }else{
+            return back()->with('result','予約がいっぱいで予約できません......。');
+        }
     }
 
+    // 予約削除
     public function delete($id)
     {
         DB::table('reservations')
