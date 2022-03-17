@@ -15,7 +15,13 @@
 //     return view('welcome');
 // });
 
-Auth::routes();
+// ユーザー
+Route::namespace('User')->prefix('user')->name('user.')->group(function () {
+Auth::routes([
+    'register' => true,
+    'reset'    => false,
+    'verify'   => false
+]);
 Route::get('/', function() {
     return redirect('/login');
 });
@@ -40,3 +46,5 @@ Route::post('remote', 'ReservationController@store'); // 送信先
 // 予約削除
 Route::get('/reserve/{id}/delete','ReservationController@delete');
 Route::get('/remote/{id}/delete','ReservationController@delete');
+
+});
