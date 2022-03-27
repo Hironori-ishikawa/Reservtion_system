@@ -21,3 +21,13 @@
 a.my-navbar-item:hover {
   color: #ffffff;
 }
+
+.my-navbar-admin {
+  align-items: center;
+  background: pink;
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  margin-bottom: 3rem;
+}

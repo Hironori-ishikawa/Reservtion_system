@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -42,20 +42,6 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('admin.login');  //変更
-    }
-
-    protected function guard()
-    {
-        return Auth::guard('admin');  //変更
-    }
-
-    public function logout(Request $request)
-    {
-        Auth::guard('admin')->logout();  //変更
-        $request->session()->flush();
-        $request->session()->regenerate();
-
-        return redirect('/admin/login');  //変更
+        return view('admin.auth.login');
     }
 }

@@ -33,11 +33,6 @@ class RegisterController extends Controller
         return Auth::guard('admin');
     }
 
-    public function showRegistrationForm()
-    {
-        return view('admin.auth.register');
-    }
-
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -54,5 +49,10 @@ class RegisterController extends Controller
             'email'    => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('admin.auth.register');
     }
 }
