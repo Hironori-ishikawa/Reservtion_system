@@ -22,7 +22,7 @@
 <body>
 <header>
     <nav class="my-navbar">
-        <a class="my-navbar-brand" href="/">オフィス来社・リモート予約システム</a>
+        <a class="my-navbar-brand" href="{{ route('reserves.index')}}">オフィス来社・リモート予約システム</a>
         <div class="my-navbar-control">
             @if(Auth::check())
               <span class="my-navbar-item">ようこそ, {{ Auth::user()->username }}さん</span>

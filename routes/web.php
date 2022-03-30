@@ -50,3 +50,8 @@ Route::post('remote', 'ReservationController@store'); // 送信先
 // 予約削除
 Route::get('/reserve/{id}/delete', 'ReservationController@delete');
 Route::get('/remote/{id}/delete', 'ReservationController@delete');
+
+// Admin ログイン後
+Route::group(['middleware' => 'auth:admin'], function () {
+    Route::get('/admin/auth/index', 'LoginController@index')->name('admin.auth.index');
+});

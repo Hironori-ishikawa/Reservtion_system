@@ -48,6 +48,6 @@ class LoginController extends Controller
     // Guardの認証方法を指定
     protected function guard()
     {
-        return Auth::guard('users');
+        return Auth::guard('user');
     }
 }
