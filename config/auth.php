@@ -3,8 +3,14 @@
 return [
 
     'defaults' => [
-        'guard' => 'user',
-        'passwords' => 'users',
+        'user' => [
+            'guard' => 'user',
+            'passwords' => 'users',
+        ],
+        'admin' => [
+            'guard' => 'admin',
+            'passwords' => 'admins',
+        ]
     ],
 
     'guards' => [

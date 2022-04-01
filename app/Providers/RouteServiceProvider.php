@@ -26,7 +26,7 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/reserve/index';
 
     // Adminのリダイレクト先
-    public const ADMIN_HOME = '/admin/home';
+    public const ADMIN_HOME = '/admin/auth/index';
 
 
     /**

@@ -22,10 +22,10 @@
 <body>
 <header>
     <nav class="my-navbar-admin">
-        <a class="my-navbar-brand" href="/">オフィス来社・リモート予約システム</a>
+        <a class="my-navbar-brand" href="{{ route('admin.auth.index')}}">オフィス来社・リモート予約システム</a>
         <div class="my-navbar-control">
             @if(Auth::check())
-              <span class="my-navbar-item">ようこそ, 管理者の{{ Auth::user()->username }}さん</span>
+              <span class="my-navbar-item">ようこそ, 管理者の{{ Auth::admin()->name }}さん</span>
               ｜
               <a href="{{ route('logout') }}" id="logout" class="my-navbar-item">ログアウト</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

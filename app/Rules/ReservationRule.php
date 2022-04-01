@@ -30,7 +30,7 @@ class ReservationRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        return \App\Reservation::where('id', $this->_id)
+        return \App\Models\Reservation::where('id', $this->_id)
         ->whereHasReservation($this->_start_at, $this->_end)
         ->doesntExist();
     }

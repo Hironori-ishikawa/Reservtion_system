@@ -44,13 +44,13 @@ class ReservationController extends Controller
     // if($check<3) 3人以内であればcreate実行
     public function store(ReservationRequest $request) {
 
-        $check = \App\Reservation::where('title',$request->title)
+        $check = \App\Models\Reservation::where('title',$request->title)
             ->whereBetween('start_at',[$request->start_at,$request->end_at])
             ->whereBetween('end_at',[$request->start_at,$request->end_at])
             ->count();
 
         if($check<3){
-            \App\Reservation::create([
+            \App\Models\Reservation::create([
                 'user_id' => Auth::id(),
                 'title' => $request->title,
                 'start_at' => $request->start_at,

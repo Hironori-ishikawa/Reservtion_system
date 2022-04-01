@@ -45,8 +45,17 @@ class LoginController extends Controller
         return view('admin.auth.login');
     }
 
-    public function index()
+    // Guardの認証方法を指定
+    protected function guard()
     {
-        return view('admin.auth.index');
+        return Auth::guard('admin');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('admin.login');
+    }
+
+
 }
