@@ -9,12 +9,14 @@
 }
 
 .my-navbar-brand {
-  font-size: 18px;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .my-navbar-brand,
 .my-navbar-item {
   color: #323443;
+  text-decoration: none;
 }
 
 .my-navbar-brand:hover,
@@ -47,10 +49,36 @@ a.my-navbar-item:hover {
   font-size: large;
 }
 
-.form-group {
+.form-email, .form-password{
   margin-top: 3%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 5%;
 }
 
 .col-md-4 {
   font-size: 18px;
+}
+
+.main-form {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px;
+  margin: auto;
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+.reserve-button, .remote-button{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  margin: auto;
+  margin-top: 5%;
 }

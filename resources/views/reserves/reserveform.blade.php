@@ -3,6 +3,7 @@
 @section('content')
 <div class="reserve-form">
   <h1>ここはオフィス来社予約のフォーム</h1>
+  <h2>オフィス来社予約する日時を選択して下さい</h2>
   <div class="form-group">
     <form action="/reserve" method="post">
       @csrf

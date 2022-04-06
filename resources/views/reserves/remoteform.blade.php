@@ -3,6 +3,7 @@
 @section('content')
 <div class="remote-form">
   <h1>ここはリモート予約のフォーム</h1>
+  <h2>リモート予約する日時を選択してください</h2>
   <div class="form-group">
     <form action="/remote" method="post">
       @csrf

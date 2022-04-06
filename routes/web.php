@@ -54,5 +54,6 @@ Route::get('/remote/{id}/delete', 'ReservationController@delete');
 // Admin ログイン後
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/admin/auth/index', 'AdminController@index')->name('admin.auth.index');
-
+    Route::get('/logout', 'Admin\Auth\LoginController@logout')->name('logout');
+    Route::post('/logout', 'Admin\Auth\LoginController@logout')->name('logout');
 });

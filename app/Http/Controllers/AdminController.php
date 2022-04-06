@@ -10,11 +10,15 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $id = Auth::id();
         $list = DB::table('reservations')
-        ->where('user_id')
         ->select('reservations.*')
         ->get();
-        return view('admin.auth.index',['list'=>$list, 'id'=>$id]);
+        return view('admin.auth.index',['list'=>$list]);
+    }
+
+    // Guardの認証方法を指定
+    protected function guard()
+    {
+        return Auth::guard('admin');
     }
 }
